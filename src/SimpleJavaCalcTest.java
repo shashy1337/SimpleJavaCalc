@@ -21,15 +21,18 @@ public class SimpleJavaCalcTest {
 
             iterCounter++;
 
-
-            if (iterCounter > 6) {
-                System.out.print("Хотите ли вы звкрыть калькулятор? y/n: ");
-                String scanString = scan.nextLine();
-                if (scanString == "Y") {
-                    cantStop = false;
+            try {
+                if (iterCounter > 6) {
+                    System.out.print("Хотите ли вы закрыть калькулятор? y/n: ");
+                    String scanString = scan.next();
+                    if (scanString.equalsIgnoreCase("Y")) {
+                        cantStop = false;
+                    }
+                } else {
+                    continue;
                 }
-            } else {
-                continue;
+            } catch (Exception e){
+                System.out.println("ОЙ ой, что то пошло не так: " + e);
             }
 
 
